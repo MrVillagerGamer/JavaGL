@@ -1,4 +1,3 @@
-package dev.braiden.javagl;
 
 import java.awt.Canvas;
 import java.awt.Color;
