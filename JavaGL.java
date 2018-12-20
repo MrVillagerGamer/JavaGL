@@ -23,12 +23,6 @@ public class JavaGL
 	public static final int GL_DRAW_MODE_LINE = 0;
 	public static final int GL_DRAW_MODE_FILL = 1;
 	
-	// TextureData not yet implemented
-	public static final float[][] GL_TEXTURE_DATA = new float[][] {
-		{1, 1, 0},
-		{},
-	};
-	
 	// Sets window features
 	public static void glViewportWidth(int width)
 	{
