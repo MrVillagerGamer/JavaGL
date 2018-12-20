@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 
 public class JavaGL 
 {
+	// Variable declarations
 	private static int width = 800;
 	private static int height = 600;
 	private static String title = "JavaGL";
@@ -18,13 +19,17 @@ public class JavaGL
 	private static BufferStrategy strategy;
 	private static Graphics graphics;
 	
+	// JavaGL draw modes
 	public static final int GL_DRAW_MODE_LINE = 0;
 	public static final int GL_DRAW_MODE_FILL = 1;
+	
+	// TextureData not yet implemented
 	public static final float[][] GL_TEXTURE_DATA = new float[][] {
 		{1, 1, 0},
 		{},
 	};
 	
+	// Sets window features
 	public static void glViewportWidth(int width)
 	{
 		JavaGL.width = width;
@@ -40,6 +45,7 @@ public class JavaGL
 		JavaGL.title = title;
 	}
 	
+	// Creates the window
 	public static void glCreateViewport()
 	{
 		frame = new JFrame();
@@ -59,22 +65,28 @@ public class JavaGL
 		canvas.createBufferStrategy(3);
 	}
 	
+	// Re initialized buffers and graphics
 	public static void glPrepareGraphics()
 	{
 		strategy = canvas.getBufferStrategy();
 		graphics = strategy.getDrawGraphics();
 	}
 	
+	// Disposes the graphics and swaps buffers
 	public static void glDisposeGraphics()
 	{
 		strategy.show();
 		graphics.dispose();
 	}
+	
+	// Clears the screen to a color
 	public static void glClearColor(float r, float g, float b)
 	{
 		graphics.setColor(new Color(r, g, b));
 		graphics.fillRect(0, 0, width, height);
 	}
+	
+	// Draws 3 vectors as a triangle
 	public static void glDrawVectors(float[] vector1, float[] vector2, float[] vector3)
 	{
 		Polygon p = new Polygon();
@@ -85,6 +97,7 @@ public class JavaGL
 		graphics.fillPolygon(p);
 	}
 	
+	// Overloaded method for the one above, takes in a draw mode
 	public static void glDrawVectors(int drawMode, float[] vector1, float[] vector2, float[] vector3)
 	{
 		Polygon p = new Polygon();
@@ -98,6 +111,7 @@ public class JavaGL
 			graphics.fillPolygon(p);
 	}
 	
+	// Creates an identity matrix
 	public static float[][] glInitMatrixIdentity()
 	{
 		float[][] matrix = new float[4][4];
@@ -108,6 +122,7 @@ public class JavaGL
 		return matrix;
 	}
 	
+	// Creates a scale matrix
 	public static float[][] glInitMatrixScale(float x, float y, float z)
 	{
 		float[][] matrix = new float[4][4];
@@ -118,6 +133,7 @@ public class JavaGL
 		return matrix;
 	}
 	
+	// Creates a translation matrix
 	public static float[][] glInitMatrixTranslation(float x, float y, float z)
 	{
 		float[][] matrix = new float[4][4];
@@ -129,6 +145,7 @@ public class JavaGL
 		return matrix;
 	}
 	
+	// Creates rotation matrices
 	public static float[][] glInitMatrixRotationX(float x)
 	{
 		float[][] matrix = new float[4][4];
@@ -165,6 +182,7 @@ public class JavaGL
 		return matrix;
 	}
 	
+	// Multiplies a vector and a matrix, returns a vector
 	public static float[] glMultiplyVectorMatrix(float[] vector, float[][] matrix)
 	{
 		float[] vector2 = new float[4];
