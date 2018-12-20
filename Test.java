@@ -67,7 +67,7 @@ public class Test {
 			// Clears the screen (must be called between prepare and dispose or an error will occur)
 			JavaGL.glClearColor(0, 0, 0);
 			
-			// Clears the screen (must be called between prepare and dispose or an error will occur)
+			// Draws a triangle (must be called between prepare and dispose or an error will occur)
 			JavaGL.glDrawVectors(vector1, vector2, vector3);
 			
 			// Disposes the graphics and swaps the buffers
