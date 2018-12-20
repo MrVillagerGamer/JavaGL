@@ -8,7 +8,7 @@ import java.awt.image.BufferStrategy;
 
 import javax.swing.JFrame;
 
-public class JavaGL 
+public class JGE 
 {
 	// Variable declarations
 	private static int width = 800;
