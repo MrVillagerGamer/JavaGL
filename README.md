@@ -1,4 +1,4 @@
-# JavaGL
+# Java Graphics Engine
 My 3d graphics library for java
 
 # Future Additions
