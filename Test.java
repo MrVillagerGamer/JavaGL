@@ -1,4 +1,3 @@
-package dev.braiden.javagl;
 
 public class Test {
 
